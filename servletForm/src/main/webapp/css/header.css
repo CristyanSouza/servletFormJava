@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+
+header {
+	font-size: 1.16em;
+	display: flex;
+	align-items: center;
+	justify-content:right;
+	gap: 20px;
+	width: 100vw;
+	height: 60px;
+	background-color: #2b4c7e;
+	color: white;
+}
+.button-header {
+	background-color: #1f1f20;
+	
+}
+

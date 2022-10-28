@@ -1,0 +1,53 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap'); 
+
+*{margin:0;
+padding:0;
+text-decoration: none;
+    font-family: 'DM Sans', sans-serif;
+}
+
+
+body {
+height: 100vh;
+background-color: #606d80;
+display: flex;
+flex-direction: column;
+align-items: center;
+
+}
+
+.person:visited, .person:link {
+    color: black;
+}
+
+a:visited, a.button:visited, a.button:link a:link {
+color: white;
+}
+
+
+.button {
+	color:white;
+	margin-right: 20px;
+	text-decoration: none;
+	padding: 10px 35px;
+	background-color:  #2b4c7e;
+	border-radius: 20px;
+	cursor: pointer;
+	box-shadow: 1px 1px 5px black;
+	max-width: 140px;
+	
+}
+
+.button.button-removed {
+	background-color: #ff4b42;
+	margin-top: 10px;
+	font-size: 0.8em;
+}
+
+.button:hover {
+	transition: 500ms;
+	background-color:#8080ff;
+
+}
+

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="/servletForm/css/style.css" rel="stylesheet" type="text/css">
+<link href="/servletForm/css/forms.css" rel="stylesheet" type="text/css">
+
+<meta charset="UTF-8">
+<title>Cadastro</title>
+</head>
+<body>
+	<form action="enter?action=AddUser"  method="post">
+	<h1>Bem vindo ao sistema de cadastro</h1>
+	<h3>Crie o seu usuário para acesso</h3>
+	<div class="inputs-form">
+	<label for="name">
+	<span> Nome</span> <input placeholder="Digite seu nome"type="text" name="name"/>
+	</label>
+	<label for="login">
+	<span>Usuario</span> <input placeholder="Digite seu usuario" type="text" name="login"/>
+	</label>
+	<label for="password">
+	<span>Senha</span> <input placeholder="Digite sua senha" type="password" name="password"/>
+	</label>
+	</div>
+	<input type="submit" class="button" value="Cadastrar"/>
+	<a href="enter?action=LoginForm">Já tem um usuário? Clique aqui para fazer login</a>
+	</form>
+	
+</body>
+</html>
