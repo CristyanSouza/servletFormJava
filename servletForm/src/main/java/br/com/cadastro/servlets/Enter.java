@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import br.com.cadastro.action.Action;
-import br.com.cadastro.classes.User;
+import br.com.cadastro.template.User;
 
 
 @WebServlet("/enter")

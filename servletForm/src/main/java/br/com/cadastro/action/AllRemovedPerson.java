@@ -9,9 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.cadastro.classes.Db;
-import br.com.cadastro.classes.Person;
-import br.com.cadastro.classes.RemovedPerson;
+import br.com.cadastro.template.Db;
+import br.com.cadastro.template.Person;
+import br.com.cadastro.template.RemovedPerson;
 
 
 public class AllRemovedPerson implements Action {

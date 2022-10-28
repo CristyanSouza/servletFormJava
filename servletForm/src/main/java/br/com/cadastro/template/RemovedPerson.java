@@ -1,4 +1,4 @@
-package br.com.cadastro.classes;
+package br.com.cadastro.template;
 
 public class RemovedPerson {
 

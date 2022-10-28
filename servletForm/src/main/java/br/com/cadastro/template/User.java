@@ -1,9 +1,20 @@
-package br.com.cadastro.classes;
+package br.com.cadastro.template;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity(name = "user")
 public class User {
+	@Id
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	private int id;
 	private String name;
 	private String password;
 	private String login;
+	
+	
 	
 	public User(String name, String login, String password) {
 		this.login = login;
@@ -14,7 +25,9 @@ public class User {
 	public String getName() {
 		return name;
 	}
-	
+	public int getId() {
+		return this.id;
+	}
 	public void setName(String name) {
 		this.name = name;
 	}

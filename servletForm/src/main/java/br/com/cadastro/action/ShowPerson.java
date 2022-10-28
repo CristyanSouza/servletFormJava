@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.cadastro.classes.Db;
-import br.com.cadastro.classes.Person;
+import br.com.cadastro.template.Db;
+import br.com.cadastro.template.Person;
 
 
 public class ShowPerson implements Action{

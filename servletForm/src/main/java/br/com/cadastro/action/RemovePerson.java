@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.cadastro.classes.Db;
+import br.com.cadastro.template.Db;
 
 
 public class RemovePerson implements Action {

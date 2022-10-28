@@ -1,11 +1,33 @@
-package br.com.cadastro.classes;
+package br.com.cadastro.template;
 
+
+import java.util.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+@Entity(name = "person")
 public class Person {
-	String name;
-	String age;
-	String phone;
-	String email;
-	Integer id;
+	@Id
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	private Integer id;
+	private String name;
+	private String age;
+	private String phone;
+	private String email;
+	
+	private int removedPerson = 0;
+	private Date date_remove = new Date();
+
+	
+	
+	public Person() {
+	}
+	
 	
 	public Person (String name, String age, String phone, String email) {
 		
@@ -17,6 +39,8 @@ public class Person {
 	}
 	
 	
+	
+
 	public String getName() {
 		return name;
 	}
@@ -46,6 +70,8 @@ public class Person {
 	public Integer getId() {
 		return this.id;
 	}
+
+
 	
 	
 }
