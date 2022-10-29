@@ -18,7 +18,7 @@
 
 <ul>	
 	<c:forEach items="${removedPerson}" var="rp">
-		<li> ${rp.person.name} - Removido pelo usuário: ${rp.user.name}
+		<li> ${rp.name} - Removido pelo usuário: ${rp.removed_by.name}
 	</c:forEach>
 </ul>
 

@@ -1,14 +1,15 @@
 package br.com.cadastro.action;
 
 import java.io.IOException;
+
+import javax.persistence.EntityManager;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.cadastro.template.Db;
+import br.com.cadastro.dao.PersonDao;
 import br.com.cadastro.template.Person;
+import br.com.cadastro.util.JPAUtil;
 
 
 public class AlterPerson implements Action{
@@ -21,13 +22,17 @@ public class AlterPerson implements Action{
 		String stringId = request.getParameter("id");
 		Integer id = Integer.valueOf(stringId);
 		
-		
-		Person person = Db.select(id);
+		EntityManager em = JPAUtil.getEntityManager();
+		PersonDao dao = new PersonDao(em);
+		Person person = dao.selectId(id);
 		person.setName(name);
 		person.setAge(age);
 		person.setPhone(phone);
 		person.setEmail(email);
 		
+		em.getTransaction().begin();
+		dao.update(person);
+		em.getTransaction().commit();
 		return "redirect:AllPerson";
 	}
 

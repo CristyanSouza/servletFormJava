@@ -1,15 +1,15 @@
 package br.com.cadastro.action;
 
 import java.io.IOException;
+
+import javax.persistence.EntityManager;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.cadastro.template.Db;
-import br.com.cadastro.template.Person;
+import br.com.cadastro.dao.UserDao;
 import br.com.cadastro.template.User;
+import br.com.cadastro.util.JPAUtil;
 
 
 public class AddUser implements Action {
@@ -19,8 +19,12 @@ public class AddUser implements Action {
 		String login = request.getParameter("login");
 		String password = request.getParameter("password");
 		
-		Db.addUser(new User(name, login, password));
+		EntityManager em = JPAUtil.getEntityManager();
+		UserDao dao = new UserDao(em);
 		
+		em.getTransaction().begin();
+		dao.addUser(new User(name, login, password));
+		em.getTransaction().commit();
 		return "redirect:LoginForm";
 
 }

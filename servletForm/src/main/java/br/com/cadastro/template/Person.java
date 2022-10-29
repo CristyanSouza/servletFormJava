@@ -1,6 +1,7 @@
 package br.com.cadastro.template;
 
 
+import java.time.LocalDate;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -20,8 +21,11 @@ public class Person {
 	private String phone;
 	private String email;
 	
+	@ManyToOne()
+	@JoinColumn(name = "removed_by")
+	private User removed_by = null;
 	private int removedPerson = 0;
-	private Date date_remove = new Date();
+	private LocalDate date_remove = null;
 
 	
 	
@@ -35,7 +39,6 @@ public class Person {
 		this.age = age;
 		this.phone = phone;
 		this.email = email;
-		this.id = Db.pk;
 	}
 	
 	
@@ -72,6 +75,32 @@ public class Person {
 	}
 
 
+	public int getRemovedPerson() {
+		return removedPerson;
+	}
+
+
+	public void setRemovedPerson(int removedPerson) {
+		this.removedPerson = removedPerson;
+	}
+
+
+	public LocalDate getDate_remove() {
+		return date_remove;
+	}
+
+
+	public void setDate_remove(LocalDate localDate) {
+		this.date_remove = localDate;
+	}
+
+	public User getRemoved_by() {
+		return removed_by;
+	}
+	
+	public void setRemoved_by(User removed_by) {
+		this.removed_by = removed_by;
+	}
 	
 	
 }

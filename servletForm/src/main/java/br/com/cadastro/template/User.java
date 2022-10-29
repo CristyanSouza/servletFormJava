@@ -14,7 +14,7 @@ public class User {
 	private String password;
 	private String login;
 	
-	
+	public User () {}
 	
 	public User(String name, String login, String password) {
 		this.login = login;

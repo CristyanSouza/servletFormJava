@@ -4,7 +4,7 @@
 
 </head>
 <header>
-	<p>Olá, ${user.name}</p>
+	<p>Olá, ${user.name }</p>
 	<a class="button button-header" href="enter?action=Logout">Sair</a>
 </header>
 <br>
